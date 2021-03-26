@@ -1,0 +1,18 @@
+@import "variables";
+
+@media screen and (max-width: $medium-screen) {
+  main {
+    .img-container {
+      grid-column: 1/-1;
+    }
+
+    .descriptions {
+      grid-column: 1/-1;
+    }
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+  }
+}

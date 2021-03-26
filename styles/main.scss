@@ -1,0 +1,97 @@
+@import "variables";
+@import "controls";
+
+// Global styles
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-size: $standard-font-size;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+nav {
+  position: absolute;
+}
+
+p {
+  color: $dark-gray;
+  line-height: 1.2rem;
+  font-size: $paragraph;
+}
+
+.cover {
+  @include cover;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 3fr 3fr 1fr 3fr;
+  grid-template-rows: 2fr 1fr;
+  grid-auto-rows: 1fr;
+
+  .img-container {
+    grid-column: span 2;
+    position: relative;
+  }
+
+  .descriptions {
+    @include flex(column, center, center);
+    height: 100%;
+    position: relative;
+    grid-column: span 2;
+
+    .text-container {
+      padding: 2rem 15%;
+    }
+
+    h1,
+    p {
+      margin-bottom: 2rem;
+    }
+
+    button {
+      margin-bottom: 1.6rem;
+    }
+
+    h1 {
+      font-size: $header-one;
+      font-weight: weight(medium);
+    }
+  }
+
+  .image {
+    overflow-y: hidden;
+  }
+  .image img {
+    @include cover;
+  }
+
+  .about {
+    @include flex(column);
+    grid-column: span 2;
+    padding: 0 3rem;
+
+    h3 {
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      width: 100%;
+      letter-spacing: 0.25rem;
+    }
+  }
+}
+
+@import "mobile";
