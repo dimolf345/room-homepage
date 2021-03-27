@@ -4,6 +4,7 @@ $text-white: #fff;
 $text-dark: #000;
 $header-one: 2.2rem;
 $paragraph: 0.78rem;
+$small-text: 0.8rem;
 $standard-font-size: 12px;
 $font-weights: (
   "regular": 500,
@@ -11,6 +12,12 @@ $font-weights: (
   "bold": 700,
 );
 $medium-screen: 950px;
+$small-screen: 600px;
+$mobile-fonts: (
+  "header1": 1.7rem,
+  "paragraph": 0.85rem,
+  "header3": 0.7rem,
+);
 
 @mixin cover {
   width: 100%;
@@ -30,4 +37,8 @@ $medium-screen: 950px;
 
 @function weight($weight) {
   @return map-get($font-weights, $weight);
+}
+
+@function mob-font($size) {
+  @return map-get($mobile-fonts, $size);
 }

@@ -45,7 +45,17 @@
     </header>
     <main>
       <div class="img-container">
-        <img class="cover" src="./images/desktop-image-hero-1.jpg" alt="" />
+        <!-- source and srcset are used to adapt image to screen resolution and width -->
+        <picture>
+          <source
+            media="(max-width:500px)"
+            srcset="
+              ./images/mobile-image-hero-1.jpg 1x,
+              ./images/mobile-image-hero-1.jpg 2x
+            "
+          />
+          <img class="cover" src="./images/desktop-image-hero-1.jpg" alt="" />
+        </picture>
         <!-- <img src="./images/desktop-image-hero-2.jpg" alt="" />
            <img src="./images/desktop-image-hero-3.jpg" alt="" /> -->
         <div class="controls controls-mobile">
@@ -69,7 +79,12 @@
             our collection and make your property a reflection of you and what
             you love.
           </p>
-          <button>Shop now</button>
+          <button class="shop">
+            shop now
+            <span class="arrow">
+              <img src="./images/icon-arrow.svg" alt="button image" />
+            </span>
+          </button>
         </div>
 
         <div class="controls controls-desktop">

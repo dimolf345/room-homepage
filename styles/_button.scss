@@ -1,0 +1,23 @@
+@import "variables";
+
+.shop {
+  outline: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.45rem;
+  padding: 0.25rem 0;
+  font-size: $small-text;
+  font-weight: weight(regular);
+
+  &:hover,
+  .arrow {
+    color: $dark-gray;
+    opacity: 0.7;
+  }
+
+  & .arrow {
+    margin-left: 2rem;
+  }
+}
