@@ -19,14 +19,75 @@ ul {
   list-style-type: none;
 }
 
-nav {
-  position: absolute;
-}
-
 p {
   color: #a1a1a1;
   line-height: 1.2rem;
   font-size: 0.78rem;
+}
+
+nav {
+  position: absolute;
+  color: #fff;
+  z-index: 2;
+  margin: 4rem;
+  width: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+nav h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: 2rem;
+}
+
+nav ul li {
+  margin-left: 2rem;
+  font-size: 0.8rem;
+  position: relative;
+}
+
+nav ul a:hover::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background-color: #fff;
 }
 
 .controls {
@@ -153,10 +214,17 @@ p {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
+  -o-object-position: auto center;
+     object-position: auto center;
+}
+
+@media screen and (max-width: 1200px) {
+  .cover {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center center;
+       object-position: center center;
+  }
 }
 
 main {
@@ -165,13 +233,15 @@ main {
   display: grid;
   -ms-grid-columns: 3fr 3fr 1fr 3fr;
       grid-template-columns: 3fr 3fr 1fr 3fr;
-  -ms-grid-rows: 2fr 1fr;
-      grid-template-rows: 2fr 1fr;
+  -ms-grid-rows: 2.5fr 1fr;
+      grid-template-rows: 2.5fr 1fr;
   grid-auto-rows: 1fr;
 }
 
 main .img-container {
-  grid-column: span 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
   position: relative;
 }
 
@@ -222,10 +292,17 @@ main .image img {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
+  -o-object-position: auto center;
+     object-position: auto center;
+}
+
+@media screen and (max-width: 1200px) {
+  main .image img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center center;
+       object-position: center center;
+  }
 }
 
 main .about {
@@ -256,6 +333,13 @@ main .about h3 {
 }
 
 @media screen and (max-width: 950px) {
+  nav {
+    width: 100%;
+    margin: calc(1.5rem + 1.2vw);
+  }
+  p {
+    font-size: 0.702rem;
+  }
   main .img-container {
     grid-column: 1/-1;
   }
@@ -263,14 +347,11 @@ main .about h3 {
     grid-column: 1/-1;
   }
   main .descriptions .text-container {
-    padding: 1.4rem 10% 0.7rem;
+    padding: 2rem 10% 0.7rem;
   }
   main .about {
     padding: 1rem 0.6rem;
     font-size: 0.546rem;
-  }
-  main .about p {
-    font-size: 0.702rem;
   }
   .image {
     width: 100%;
@@ -280,7 +361,7 @@ main .about h3 {
 
 @media only screen and (max-width: 600px) {
   p {
-    font-size: 0.85rem !important;
+    font-size: 0.85rem;
   }
   main {
     -ms-grid-columns: 1fr;

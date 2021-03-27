@@ -1,0 +1,37 @@
+@import "variables";
+
+nav {
+  position: absolute;
+  color: $text-white;
+  z-index: 2;
+  margin: 4rem;
+  width: 55%;
+  @include flex(row, flex-start, center);
+
+  h3 {
+    font-size: $header-three;
+    font-weight: weight("medium");
+  }
+
+  ul {
+    @include flex(row, space-between, center);
+    margin-left: 2rem;
+
+    li {
+      margin-left: 2rem;
+      font-size: $small-text;
+      position: relative;
+    }
+
+    & a:hover::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 3px;
+      background-color: $text-white;
+    }
+  }
+}
