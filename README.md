@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/sass-and-css-grid-for-first-time-Tne2wlzgm)
+- Live Site URL: [Add live site URL here](https://room-homepage-by-dimolf345.netlify.app/)
 
 ## My process
 
