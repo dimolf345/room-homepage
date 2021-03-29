@@ -25,12 +25,26 @@ p {
   font-size: 0.78rem;
 }
 
+#toggler {
+  background-image: url("../images/icon-hamburger.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 28px;
+  width: 28px;
+  display: none;
+  cursor: pointer;
+  z-index: 4;
+}
+
 nav {
   position: absolute;
   color: #fff;
   z-index: 2;
-  margin: 4rem;
   width: 55%;
+  height: 15%;
+  -webkit-transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,6 +63,7 @@ nav {
 }
 
 nav h3 {
+  margin-left: 3rem;
   font-size: 1.6rem;
   font-weight: 600;
 }
@@ -73,7 +88,7 @@ nav ul {
 }
 
 nav ul li {
-  margin-left: 2rem;
+  margin-left: 1.3rem;
   font-size: 0.8rem;
   position: relative;
 }
@@ -88,6 +103,68 @@ nav ul a:hover::after {
   width: 50%;
   height: 3px;
   background-color: #fff;
+}
+
+@media screen and (max-width: 950px) {
+  nav {
+    width: 70%;
+  }
+  nav ul {
+    margin-left: 0.45rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #toggler {
+    position: absolute;
+    display: block;
+    z-index: 3;
+    left: 5%;
+  }
+  nav {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  nav ul {
+    display: none;
+  }
+  nav h3 {
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 0;
+  }
+  nav.open {
+    height: 100vh;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    background: white;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, white), color-stop(15%, rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4)));
+    background: linear-gradient(180deg, white 15%, rgba(0, 0, 0, 0.4) 15%, rgba(0, 0, 0, 0.4) 100%);
+  }
+  nav.open a {
+    color: black;
+    font-weight: 600;
+  }
+  nav.open h3 {
+    display: none;
+  }
+  nav.open ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 15%;
+    padding: 1rem 1rem 1rem 2rem;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  nav.open #toggler {
+    background-image: url("../images/icon-close.svg");
+    top: 5%;
+  }
 }
 
 .controls {
@@ -214,17 +291,34 @@ nav ul a:hover::after {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  -o-object-position: auto center;
-     object-position: auto center;
+  -o-object-position: center center;
+     object-position: center center;
 }
 
 @media screen and (max-width: 1200px) {
   .cover {
-    -o-object-fit: cover;
-       object-fit: cover;
+    -o-object-fit: fill;
+       object-fit: fill;
     -o-object-position: center center;
        object-position: center center;
   }
+}
+
+@media screen and (max-width: 950px) {
+  .cover {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: auto;
+       object-position: auto;
+  }
+}
+
+.active {
+  display: inline;
+}
+
+picture {
+  display: none;
 }
 
 main {
@@ -239,10 +333,14 @@ main {
 }
 
 main .img-container {
+  position: relative;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
-  position: relative;
+  -ms-grid-row: 1;
+  grid-row: 1 / 1;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 main .descriptions {
@@ -268,6 +366,11 @@ main .descriptions {
 
 main .descriptions .text-container {
   padding: 2rem 15%;
+  background-color: white;
+}
+
+main .descriptions .text-container div:not(.active) {
+  display: none;
 }
 
 main .descriptions h1,
@@ -292,16 +395,25 @@ main .image img {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  -o-object-position: auto center;
-     object-position: auto center;
+  -o-object-position: center center;
+     object-position: center center;
 }
 
 @media screen and (max-width: 1200px) {
   main .image img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    -o-object-fit: fill;
+       object-fit: fill;
     -o-object-position: center center;
        object-position: center center;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  main .image img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: auto;
+       object-position: auto;
   }
 }
 
@@ -333,15 +445,16 @@ main .about h3 {
 }
 
 @media screen and (max-width: 950px) {
-  nav {
-    width: 100%;
-    margin: calc(1.5rem + 1.2vw);
-  }
   p {
     font-size: 0.702rem;
   }
   main .img-container {
     grid-column: 1/-1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    min-height: 100%;
+    min-width: 100%;
   }
   main .descriptions {
     grid-column: 1/-1;
@@ -359,13 +472,15 @@ main .about h3 {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   p {
     font-size: 0.85rem;
   }
   main {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    -ms-grid-rows: 360px;
+        grid-template-rows: 360px;
     grid-auto-rows: -webkit-max-content;
     grid-auto-rows: max-content;
   }
