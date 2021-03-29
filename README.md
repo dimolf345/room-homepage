@@ -45,19 +45,22 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+It seemed an easy project at first, but then I realized that the best way to achieve the challenge was to use CSS Grid, which I didn't know.
+So I decided to study is watching the tutorial from Wes Bos and reading the "Definitive CSS Guide" from CSS tricks.
+I learned also how to choose the perfect img source depending on display size with the srcset attribute.
+And lastly, I coded a simple but effective slider with Javascript.
 
-To see how you can add code snippets, see below:
+I know this project it's far from perfect, but I put a lot of effort on It and I'm really proud of it.
 
 ```html
 <h1>Some HTML code I'm proud of</h1>
-```
 
 <ul>
   <li>Using for first time CSS Grid</li>
   <li>Using for first time SASS with modularity logic</li>
   <li>Creating by my hand a simple slider with JS</li>
 </ul>
+```
 
 ### Continued development
 
@@ -65,14 +68,6 @@ For the next project I want to practice with API data fetching and JS. More over
 
 ## Author
 
-- Frontend Mentor - [@dimolf345]https://www.frontendmentor.io/profile/dimolf345)
+- Frontend Mentor - [@dimolf345](https://www.frontendmentor.io/profile/dimolf345)
 - LinkedIn - [@LucaDiMolfetta](https://www.linkedin.com/in/luca-di-molfetta-89659419a/)
-- Facebook - [@LucaDIMolfetta]https://www.facebook.com/Kuketto)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Facebook - [@LucaDIMolfetta](https://www.facebook.com/Kuketto)
