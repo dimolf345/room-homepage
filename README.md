@@ -50,17 +50,13 @@ So I decided to study is watching the tutorial from Wes Bos and reading the "Def
 I learned also how to choose the perfect img source depending on display size with the srcset attribute.
 And lastly, I coded a simple but effective slider with Javascript.
 
-I know this project it's far from perfect, but I put a lot of effort on It and I'm really proud of it.
-
-```html
-<h1>Some HTML code I'm proud of</h1>
+I know this project it's far from perfect, but I put a lot of effort on It and I'm really proud of it, in particular for:
 
 <ul>
   <li>Using for first time CSS Grid</li>
   <li>Using for first time SASS with modularity logic</li>
   <li>Creating by my hand a simple slider with JS</li>
 </ul>
-```
 
 ### Continued development
 
