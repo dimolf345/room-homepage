@@ -58,6 +58,14 @@ function switchActive(collection, index, nextIndex) {
     collection[nextIndex].classList.add('active');
 }
 
+document.addEventListener('keydown', function(e) {
+    let keyRegex = /right|left/i;
+    let direction = e.key.match(keyRegex);
+    if(direction) {
+        direction = direction[0].toLowerCase();
+        move(pictures,direction)};
+});
+
 // setTimeout(function() {
 //     pictures[0].classList.remove('active');
 //     pictures[-1].classList.add('active');
